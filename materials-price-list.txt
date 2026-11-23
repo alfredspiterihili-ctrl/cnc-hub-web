@@ -1,0 +1,111 @@
+# CNC Hub materials price list
+# Edit this file to change materials and prices.
+# All sheet prices are EXCLUDING VAT (18% is added in the quote breakdown).
+#
+# Format (pipe-separated):
+#   id | name | thickness_mm | process | sheet_price_ex_vat | availability | description
+#
+# process: cnc_wood | laser | fibre_laser | laminate | print3d
+# availability: stock | order  (order shows a lead-time warning)
+# Sheet size follows process (see app sheet rules).
+# For fibre_laser, sheet_price_ex_vat is the 3 mm baseline € per m² of
+# finished part (outer minus holes). Material and cut scale by thickness/3;
+# pierce and job fee do not.
+# For print3d, sheet_price_ex_vat is €/kg filament and thickness_mm is
+# density in g/cm³ (e.g. PLA 1.24).
+# Lines starting with # are ignored.
+
+ply-4 | Birch plywood 4 mm | 4 | cnc_wood | 31.00 | order | Light structural panels, jigs, prototypes
+ply-6 | Birch plywood 6 mm | 6 | cnc_wood | 64.00 | order | Light structural panels, jigs, prototypes
+ply-9 | Birch plywood 9 mm | 9 | cnc_wood | 80.00 | order | Furniture parts, brackets, cabinets
+ply-12 | Birch plywood 12 mm | 12 | cnc_wood | 98.00 | order | Furniture parts, brackets, cabinets
+ply-15 | Birch plywood 15 mm | 15 | cnc_wood | 95.00 | order | Heavy panels and worktops
+ply-18 | Birch plywood 18 mm | 18 | cnc_wood | 111.00 | stock | Heavy panels and worktops
+ply-21 | Birch plywood 21 mm | 21 | cnc_wood | 130.00 | order | Heavy panels and worktops
+ply-24 | Birch plywood 24 mm | 21 | cnc_wood | 150.00 | order | Heavy panels and worktops
+mdf-18 | MDF 18 mm | 18 | cnc_wood | 44.00 | order | Paint-grade panels and templates
+mdf-25 | MDF 25 mm | 25 | cnc_wood | 56.00 | order | Paint-grade panels and templates
+acrylic-3 | Clear acrylic 3 mm | 3 | laser | 24.00 | order | Signs, covers, display parts
+acrylic-5 | Clear acrylic 5 mm | 5 | laser | 36.00 | order | Sturdier laser-cut panels
+steel-1 | Mild steel 1 mm | 1 | fibre_laser | 40.00 | order | Thin sheet metal; €/m² is 3 mm baseline (scales by thickness/3)
+steel-2 | Mild steel 2 mm | 2 | fibre_laser | 40.00 | order | €/m² is 3 mm baseline → ~66% material + cut vs 3 mm
+steel-3 | Mild steel 3 mm | 3 | fibre_laser | 40.00 | order | Structural sheet metal; €/m² at 3 mm baseline
+pla | PLA | 1.24 | print3d | 25.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+# Support local PLA/PETG (Filacorp). Base €/kg is lowest sale; colour line can override. EcoBlend omitted.
+pla-local | Support local PLA | 1.24 | print3d | 14.65 | stock | Filacorp rPLA list €/kg — Prime 14.65 / Satin 14.85 / Silk 17.15 (colour line)
+petg | PETG | 1.27 | print3d | 30.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+petg-local | Support local PETG | 1.27 | print3d | 16.45 | stock | Filacorp rPETG list €/kg — Titan/Crystal 16.45 (colour line)
+abs | ABS | 1.04 | print3d | 35.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+asa | ASA | 1.07 | print3d | 32.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+tpu-95a | TPU 95A | 1.21 | print3d | 35.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+pc | PC | 1.20 | print3d | 55.00 | stock | FDM filament — price €/kg, thickness = density g/cm³
+
+# EGGER laminates (PCS Malta) — 1450×2800 × 19 mm, sorted by ST suffix
+f501-st2 | F501 ST2 Brushed Aluminium | 19 | laminate | 80.00 | stock | EGGER F501 ST2 · 1450×2800 × 19 mm | 1450 | 2800
+u104-st2 | U104 ST2 Alabaster White | 19 | laminate | 80.00 | stock | EGGER U104 ST2 · 1450×2800 × 19 mm | 1450 | 2800
+u999-st2 | U999 ST2 Black | 19 | laminate | 80.00 | stock | EGGER U999 ST2 · 1450×2800 × 19 mm | 1450 | 2800
+w908-st2 | W908 ST2 Basic White | 19 | laminate | 80.00 | stock | EGGER W908 ST2 · 1450×2800 × 19 mm | 1450 | 2800
+w980-st2 | W980 ST2 Platinum White | 19 | laminate | 80.00 | stock | EGGER W980 ST2 · 1450×2800 × 19 mm | 1450 | 2800
+f186-st9 | F186 ST9 Light Grey Chicago Concrete | 19 | laminate | 80.00 | stock | EGGER F186 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+f187-st9 | F187 ST9 Dark Grey Chicago Concrete | 19 | laminate | 80.00 | stock | EGGER F187 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+f205-st9 | F205 ST9 Anthracite Pietra Grigia | 19 | laminate | 80.00 | stock | EGGER F205 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+f206-st9 | F206 ST9 Black Pietra Grigia | 19 | laminate | 80.00 | stock | EGGER F206 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+h1277-st9 | H1277 ST9 Light Lakeland Acacia | 19 | laminate | 80.00 | stock | EGGER H1277 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+h1910-st9 | H1910 ST9 Willow Beech | 19 | laminate | 80.00 | stock | EGGER H1910 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+h3734-st9 | H3734 ST9 Natural Dijon Walnut | 19 | laminate | 80.00 | stock | EGGER H3734 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u114-st9 | U114 ST9 Brilliant Yellow | 19 | laminate | 80.00 | stock | EGGER U114 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u156-st9 | U156 ST9 Sand Beige | 19 | laminate | 80.00 | stock | EGGER U156 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u332-st9 | U332 ST9 Orange | 19 | laminate | 80.00 | stock | EGGER U332 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u502-st9 | U502 ST9 Misty Blue | 19 | laminate | 80.00 | stock | EGGER U502 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u504-st9 | U504 ST9 Tyrolean Blue | 19 | laminate | 80.00 | stock | EGGER U504 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u525-st9 | U525 ST9 Delft Blue | 19 | laminate | 80.00 | stock | EGGER U525 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u630-st9 | U630 ST9 Lime Green | 19 | laminate | 80.00 | stock | EGGER U630 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u638-st9 | U638 ST9 Sage Green | 19 | laminate | 80.00 | stock | EGGER U638 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u665-st9 | U665 ST9 Stone Green | 19 | laminate | 80.00 | stock | EGGER U665 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u702-st9 | U702 ST9 Cashmere Grey | 19 | laminate | 80.00 | stock | EGGER U702 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u727-st9 | U727 ST9 Stone Grey | 19 | laminate | 80.00 | stock | EGGER U727 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u732-st9 | U732 ST9 Dust Grey | 19 | laminate | 80.00 | stock | EGGER U732 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u750-st9 | U750 ST9 Taupe Grey | 19 | laminate | 80.00 | stock | EGGER U750 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u763-st9 | U763 ST9 Pearl Grey | 19 | laminate | 80.00 | stock | EGGER U763 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+u960-st9 | U960 ST9 Onyx Grey | 19 | laminate | 80.00 | stock | EGGER U960 ST9 · 1450×2800 × 19 mm | 1450 | 2800
+f385-st10 | F385 ST10 Cement | 19 | laminate | 80.00 | stock | EGGER F385 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+f433-st10 | F433 ST10 Anthracite Linen | 19 | laminate | 80.00 | stock | EGGER F433 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h1145-st10 | H1145 ST10 Natural Bardolino Oak | 19 | laminate | 80.00 | stock | EGGER H1145 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h197-st10 | H197 ST10 Natural Vintage Wood | 19 | laminate | 80.00 | stock | EGGER H197 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h2033-st10 | H2033 ST10 Dark Hunton Oak | 19 | laminate | 80.00 | stock | EGGER H2033 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h3331-st10 | H3331 ST10 Natural Nebraska Oak | 19 | laminate | 80.00 | stock | EGGER H3331 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h3332-st10 | H3332 ST10 Grey Nebraska Oak | 19 | laminate | 80.00 | stock | EGGER H3332 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h3700-st10 | H3700 ST10 Natural Pacific Walnut | 19 | laminate | 80.00 | stock | EGGER H3700 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+h3702-st10 | H3702 ST10 Tobacco Pacific Walnut | 19 | laminate | 80.00 | stock | EGGER H3702 ST10 · 1450×2800 × 19 mm | 1450 | 2800
+f194-st12 | F194 ST12 Walnut Butcherblock | 19 | laminate | 80.00 | stock | EGGER F194 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+h1636-st12 | H1636 ST12 Locarno Cherry | 19 | laminate | 80.00 | stock | EGGER H1636 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+h3156-st12 | H3156 ST12 Grey Corbridge Oak | 19 | laminate | 80.00 | stock | EGGER H3156 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+h3157-st12 | H3157 ST12 Vicenza Oak | 19 | laminate | 80.00 | stock | EGGER H3157 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+h3395-st12 | H3395 ST12 Natural Corbridge Oak | 19 | laminate | 80.00 | stock | EGGER H3395 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+h3710-st12 | H3710 ST12 Natural Carini Walnut | 19 | laminate | 80.00 | stock | EGGER H3710 ST12 · 1450×2800 × 19 mm | 1450 | 2800
+f041-st15 | F041 ST15 White Sonora Stone | 19 | laminate | 80.00 | stock | EGGER F041 ST15 · 1450×2800 × 19 mm | 1450 | 2800
+h1307-st19 | H1307 ST19 Brown Warmia Walnut | 19 | laminate | 95.00 | stock | EGGER H1307 ST19 · 1450×2800 × 19 mm | 1450 | 2800
+h3325-st28 | H3325 ST28 Tobacco Gladstone Oak | 19 | laminate | 150.00 | stock | EGGER H3325 ST28 · 1450×2800 × 19 mm | 1450 | 2800
+h3326-st28 | H3326 ST28 Grey-Beige Gladstone Oak | 19 | laminate | 150.00 | stock | EGGER H3326 ST28 · 1450×2800 × 19 mm | 1450 | 2800
+h3154-st36 | H3154 ST36 Dark Brown Charleston Oak | 19 | laminate | 180.00 | stock | EGGER H3154 ST36 · 1450×2800 × 19 mm | 1450 | 2800
+h1180-st37 | H1180 ST37 Natural Halifax Oak | 19 | laminate | 180.00 | stock | EGGER H1180 ST37 · 1450×2800 × 19 mm | 1450 | 2800
+h3176-st37 | H3176 ST37 Pewter Halifax Oak | 19 | laminate | 180.00 | stock | EGGER H3176 ST37 · 1450×2800 × 19 mm | 1450 | 2800
+h3406-st38 | H3406 ST38 Anthracite Mountain Larch | 19 | laminate | 180.00 | stock | EGGER H3406 ST38 · 1450×2800 × 19 mm | 1450 | 2800
+u998-st38 | U998 ST38 Shadow Black | 19 | laminate | 180.00 | stock | EGGER U998 ST38 · 1450×2800 × 19 mm | 1450 | 2800
+w1000-st38 | W1000 ST38 Premium White | 19 | laminate | 180.00 | stock | EGGER W1000 ST38 · 1450×2800 × 19 mm | 1450 | 2800
+h1385-st40 | H1385 ST40 Natural Casella Oak | 19 | laminate | 180.00 | stock | EGGER H1385 ST40 · 1450×2800 × 19 mm | 1450 | 2800
+h1386-st40 | H1386 ST40 Brown Casella Oak | 19 | laminate | 180.00 | stock | EGGER H1386 ST40 · 1450×2800 × 19 mm | 1450 | 2800
+f021-st75 | F021 ST75 Grey Triestino Terrazzo | 19 | laminate | 180.00 | stock | EGGER F021 ST75 · 1450×2800 × 19 mm | 1450 | 2800
+f121-st87 | F121 ST87 Anthracite Metal Rock | 19 | laminate | 180.00 | stock | EGGER F121 ST87 · 1450×2800 × 19 mm | 1450 | 2800
+f302-st87 | F302 ST87 Ferro Bronze | 19 | laminate | 180.00 | stock | EGGER F302 ST87 · 1450×2800 × 19 mm | 1450 | 2800
+u399-pm | U399 PM Garnet Red | 19 | laminate | 220.00 | stock | EGGER U399 PM · 1450×2800 × 19 mm | 1450 | 2800
+u599-pm | U599 PM Indigo Blue | 19 | laminate | 220.00 | stock | EGGER U599 PM · 1450×2800 × 19 mm | 1450 | 2800
+u665-pm | U665 PM Stone Green | 19 | laminate | 220.00 | stock | EGGER U665 PM · 1450×2800 × 19 mm | 1450 | 2800
+u702-pm | U702 PM Cashmere Grey | 19 | laminate | 220.00 | stock | EGGER U702 PM · 1450×2800 × 19 mm | 1450 | 2800
+u727-pm | U727 PM Stone Grey | 19 | laminate | 220.00 | stock | EGGER U727 PM · 1450×2800 × 19 mm | 1450 | 2800
+u732-pm | U732 PM Dust Grey | 19 | laminate | 220.00 | stock | EGGER U732 PM · 1450×2800 × 19 mm | 1450 | 2800
+u767-pm | U767 PM Cubanit Grey | 19 | laminate | 220.00 | stock | EGGER U767 PM · 1450×2800 × 19 mm | 1450 | 2800
+u961-pm | U961 PM Graphite Grey | 19 | laminate | 220.00 | stock | EGGER U961 PM · 1450×2800 × 19 mm | 1450 | 2800
+u999-pm | U999 PM Black | 19 | laminate | 220.00 | stock | EGGER U999 PM · 1450×2800 × 19 mm | 1450 | 2800
+w1100-pm | W1100 PM Alpine White | 19 | laminate | 220.00 | stock | EGGER W1100 PM · 1450×2800 × 19 mm | 1450 | 2800
+u321-pg | U321 PG China Red | 19 | laminate | 80.00 | stock | EGGER U321 PG · 1450×2800 × 19 mm | 1450 | 2800
